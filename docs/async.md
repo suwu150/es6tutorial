@@ -6,7 +6,7 @@ ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
 
 async 函数是什么？一句话，它就是 Generator 函数的语法糖。
 
-前文有一个 Generator 函数，依次读取两个文件。
+前文有一个 Generator 函数，依次读取两个文件,如下所示代码：
 
 ```javascript
 const fs = require('fs');

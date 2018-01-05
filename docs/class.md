@@ -911,9 +911,11 @@ var obj = new Rectangle(3, 4); // 输出 true
 需要注意的是，子类继承父类时，`new.target`会返回子类。
 
 ```javascript
+
 class Rectangle {
   constructor(length, width) {
     console.log(new.target === Rectangle);
+    console.log(new.target === Square);
     // ...
   }
 }
@@ -924,7 +926,9 @@ class Square extends Rectangle {
   }
 }
 
-var obj = new Square(3); // 输出 false
+var obj = new Square(3); 
+// false
+// true
 ```
 
 上面代码中，`new.target`会返回子类。
@@ -951,6 +955,6 @@ var x = new Shape();  // 报错
 var y = new Rectangle(3, 4);  // 正确
 ```
 
-上面代码中，`Shape`类不能被实例化，只能用于继承。
+上面代码中，`Shape`类不能被实例化，只能用于继承。类似于java中的接口或抽象类，不能进行实例化
 
 注意，在函数外部，使用`new.target`会报错。
